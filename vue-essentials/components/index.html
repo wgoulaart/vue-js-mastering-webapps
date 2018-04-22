@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue App - Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <div id="app">
+    <counter v-bind:add-number="10"></counter>
+    <hr>
+    <counter-one></counter-one>
+  </div>
+
+  <script>
+    let counter = Vue.component('counter', {
+      template: `
+          <div>
+            <p> {{ this.count }} </p>
+            <button @click="increment"> Increment Number by {{ this.addNumber }} </button>
+          </div>
+        `,
+      props: {
+        addNumber: {
+          type: Number,
+          default: 0
+        }
+      },
+      data() {
+        return {
+          count: 0
+        }
+      },
+      methods: {
+        increment() {
+          this.count += this.addNumber
+        }
+      }
+    })
+
+    let counterOne = Vue.component('counter-one', {
+      template: `
+          <div>
+            <p> {{ this.count }} </p>
+            <button @click="increment"> Increment Number by 1</button>
+          </div>
+        `,
+      data() {
+        return {
+          count: 0
+        }
+      },
+      methods: {
+        increment() {
+          this.count++
+        }
+      }
+    })
+
+    let vue = new Vue({
+      el: '#app',
+      data: {}
+    })
+
+  </script>
+</body>
+
+</html>
