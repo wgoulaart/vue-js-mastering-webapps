@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue App - Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h2>Movides 2018</h2>
+    <ul>
+      <li v-for="movie in movies" v-if="movie.year == 2018">
+        {{ movie.name }}
+      </li>
+    </ul>
+
+    <h2>All movides </h2>
+    <ol>
+      <li v-for="movie in movies">
+        {{ movie.name }}
+      </li>
+    </ol>
+  </div>
+  <script>
+    let vue = new Vue({
+      el: '#app',
+      data: {
+        movies: [
+          {
+            name: "Pantera Negra",
+            year: 2018,
+          },
+          {
+            name: "Guerra Infinita",
+            year: 2018,
+          },
+          {
+            name: "Vingadores II",
+            year: 2017,
+          },
+          {
+            name: "Ant-man",
+            year: 2017,
+          }
+        ]
+      }
+    })
+  </script>
+</body>
+
+</html>
