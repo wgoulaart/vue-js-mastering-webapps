@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue App - Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p>Change the text:</p>
+    <input type="text" v-model="text" placeholder="Insert your text...">
+    <p>Text LowerCase: {{ lowercase }} </p>
+    <p>Text Uppercase: {{ uppercase }} </p>
+  </div>
+
+  <script>
+    let vue = new Vue({
+      el: '#app',
+      data: {
+        text: ''
+      },
+      computed: {
+        lowercase: function () {
+          return this.text.toLowerCase();
+        },
+        uppercase: function () {
+          return this.text.toUpperCase();
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
