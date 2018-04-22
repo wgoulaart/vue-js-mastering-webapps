@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue App - Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{ number }}</p>
+    <button v-on:click="showNumberLog">Show number on Log</button>
+    <button @click="reveal">Reveal Secret number</button>
+  </div>
+  <script>
+    let vue = new Vue({
+      el: '#app',
+      data: {
+        number: 0
+      },
+      methods: {
+        showNumberLog() {
+          console.log(this.number)
+        },
+        reveal() {
+          this.number = Math.floor(Math.random() * 100) + 1
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
