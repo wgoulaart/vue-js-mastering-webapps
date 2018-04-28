@@ -1,8 +1,31 @@
 <template>
-  <div class="box" @click="switchPerson()">
-    {{ person }}
+  <div class="column">
+    <div class="card" @click="switchPerson()">
+    <div class="card-content">
+      <h4 class="title">
+        {{ person.name }}
+      </h4>
+      <div class="content">
+        <p class="subtitle">
+          <strong>Height:</strong>
+          {{ person.height / 100}} mt
+        </p>
+        <p class="subtitle">
+          <strong>Mass:</strong>
+          {{ person.mass }} Kg
+        </p>
+        <p class="subtitle">
+          <strong>Gender:</strong>
+          {{ person.gender }}
+        </p>
+        <p class="subtitle">
+          <strong>Skin Color:</strong>
+          {{ person.skin_color }}
+        </p>
+      </div>
+    </div>
   </div>
-
+  </div>
 </template>
 
 <script>
