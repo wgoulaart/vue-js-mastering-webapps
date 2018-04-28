@@ -1,18 +1,19 @@
-# starbase
+# Star Wars Caracters Master
 
-> A Vue.js project
+### Challenges to Implementation
 
-## Build Setup
+1.  Add a back button which allows the user to revert their last switch character. That way, they can save a character they may have liked that they accidentally skipped over.
 
-``` bash
-# install dependencies
-npm install
+2.  Keep a history of all the characters that the user generates in the lifespan of the application.
 
-# serve with hot reload at localhost:8080
-npm run dev
+**Tips:**  
+  - Use key in v-for, to index position on list performace and fix   warning log  
 
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+  **Code:**
+  ```javascript
+  <Person
+       v-for="(id, index) in initial_ids"
+       :id="id"
+       :key="index"
+    />
+  ```
