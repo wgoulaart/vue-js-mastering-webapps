@@ -15,3 +15,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -mox-osx-font-smoothing: grayscale;
 }
+
+.category {
+  &:visited,
+  &:hover,
+  &:active {
+    color: #4FC08D;
+  }
+}
