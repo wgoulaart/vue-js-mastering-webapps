@@ -7,8 +7,8 @@ import App from './App.vue'
 import Data from './components/Data.vue'
 
 const routes = [{
-    path: '/data/:type',
-    component: Data.vue
+  path: '/data/:type',
+  component: Data.vue
 }]
 
 const router = new VueRouter({
