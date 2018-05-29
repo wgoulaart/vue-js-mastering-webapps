@@ -6,6 +6,7 @@ Vue.use(VueRouter)
 import App from './App.vue'
 import Data from './components/Data.vue'
 
+
 const routes = [{
   path: '/data/:type',
   component: Data.vue
@@ -18,5 +19,5 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
-  render: h => App
+  render: h => h(App)
 })
