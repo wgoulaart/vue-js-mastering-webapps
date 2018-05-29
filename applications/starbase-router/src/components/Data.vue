@@ -1,10 +1,17 @@
 <template>
-  <div class="">
-      Type: {{ type }}
+  <div class="col-4">
+    Type: {{ type }}
+    <!-- <Item
+      v-for="(item, key) in items"
+      key="index"
+      :item="item"
+      /> -->
   </div>
 </template>
 
 <script>
+  import Item from './Item.vue'
+
   export default {
     data() {
       return {
@@ -13,7 +20,7 @@
       }
     },
     watch: {
-      '$route': 'change'
+      '$route': 'fetchItems'
     },
     methods: {
       fetchItems() {
@@ -34,6 +41,9 @@
     },
     created() {
       this.fetchItems()
+    },
+    components: {
+      Item
     }
   }
 </script>
