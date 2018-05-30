@@ -3,7 +3,8 @@
     <Item
       v-for="(item, index) in items"
       key="index"
-      v-bind:item="item"
+      :item="item"
+      :type="type"
     />
   </div>
 </template>
@@ -35,7 +36,6 @@
             })
             .then(response => response.json())
             .then(json => this.items.push(json))
-            .then(console.log(this.items))
           }
       }
     },

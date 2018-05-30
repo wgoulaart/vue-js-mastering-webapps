@@ -1,6 +1,6 @@
 <template>
   <div class="column">
-    <div class="card">
+    <div class="card" @click="switchItem">
       <div class="card-content">
         <h4 class="title"> {{ item.name }}</h4>
         <div v-for="(value, key, index) in item">
@@ -16,6 +16,16 @@
 
 <script>
   export default {
-    props: ['item']
+    props: ['item', 'type'],
+    methods: {
+      switchItem() {
+        let random_id = Math.floor(Math.random() * 30) + 1
+        fetch(`https://swapi.co/api/${this.type}/${random_id}`, {
+          method: "GET"
+        })
+        .then(response => response.json())
+        .then(json => this.items = json)
+      }
+    }
   }
 </script>
