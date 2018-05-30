@@ -6,10 +6,9 @@ Vue.use(VueRouter)
 import App from './App.vue'
 import Data from './components/Data.vue'
 
-
 const routes = [{
   path: '/data/:type',
-  component: Data.vue
+  component: Data
 }]
 
 const router = new VueRouter({

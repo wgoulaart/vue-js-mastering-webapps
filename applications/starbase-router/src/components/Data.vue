@@ -1,11 +1,10 @@
 <template>
-  <div class="col-4">
-    Type: {{ type }}
-    <!-- <Item
-      v-for="(item, key) in items"
+  <div class="columns">
+    <Item
+      v-for="(item, index) in items"
       key="index"
-      :item="item"
-      /> -->
+      v-bind:item="item"
+    />
   </div>
 </template>
 
@@ -31,11 +30,12 @@
           for (let i in initial_ids ) {
             let id = initial_ids[i]
 
-            fetch(`https://swapi.co/api/${this.type}/${id}/`, {
+            fetch(`https://swapi.co/api/${this.type}/${id}`, {
               method: "GET"
             })
-            .then(reponse => response.json())
+            .then(response => response.json())
             .then(json => this.items.push(json))
+            .then(console.log(this.items))
           }
       }
     },
