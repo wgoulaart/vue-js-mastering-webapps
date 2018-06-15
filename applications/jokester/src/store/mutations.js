@@ -9,7 +9,7 @@ export const mutations = {
     state.jokes.push(payload)
   },
 
-  [types.REMOVE_JOKES] (state, index) {
+  [types.REMOVE_JOKE] (state, index) {
     state.jokes.splice(index, 1)
   }
 }
