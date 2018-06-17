@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="">
     <h4 class="title is-4">SingIn</h4>
     <div class="form">
       <input
