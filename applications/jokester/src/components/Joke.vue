@@ -4,7 +4,7 @@
       <div class="card-content">
         <h4 class="title is-4">
           {{joke.setup}}
-          <span @click="removeJoke(index)">&times</span>
+          <span @click="removeJoke(index)">&times;</span>
         </h4>
         <p class="subtitle"> {{joke.punchline}} </p>
       </div>
@@ -13,12 +13,10 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
-  export default {
-    props: ['joke', 'index'],
-    methods: mapActions([
-      'removeJoke'
-    ])
-  }
+export default {
+  props: ['joke', 'index'],
+  methods: mapActions(['removeJoke'])
+}
 </script>
