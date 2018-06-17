@@ -4,7 +4,7 @@
     <button class="button is-primary" @click="initJokes">Add random Jokes</button>
     <button class="button is-primary" @click="addJoke">Add New Joke</button>
     <br>
-    <span class="subtitle" v-for="type in types">
+    <span class="subtitle" v-for="(type, index) in types" :key="index">
       <label class="checkbox">
         <input
           type="checkbox"
@@ -21,7 +21,7 @@
         v-for="(joke, index) in $store.state.jokes"
         :index="index"
         :joke="joke"
-        key="index"
+        :key="index"
         v-show="checkedTypes.includes(joke.type)"
       />
     </div>
