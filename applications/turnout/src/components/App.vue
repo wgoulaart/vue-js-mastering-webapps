@@ -1,5 +1,6 @@
 <template>
   <div id="app">
-    App Turnout content
+    <h3 class="title">App Turnout Content</h3>
+    <router-view></router-view>
   </div>
 </template>
