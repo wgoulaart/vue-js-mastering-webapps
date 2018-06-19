@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="section">
     <h4 class="title is-4">SingIn</h4>
     <div class="form">
       <input
@@ -14,7 +14,7 @@
         class="input"
         v-model="password"
       />
-      <button class="button is-primary" @click="singIn">Sing In</button>
+      <button class="button is-primary" @click="signIn">Sing In</button>
     </div>
 
     <br>
@@ -37,7 +37,7 @@ export default {
     }
   },
   methods: {
-    singIn() {
+    signIn() {
       firebaseApp
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
