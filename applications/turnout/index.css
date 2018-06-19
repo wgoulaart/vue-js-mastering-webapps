@@ -17,3 +17,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -mox-osx-font-smoothing: grayscale;
 }
+
+.input {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.button {
+  display: block;
+  margin: 15px auto;
+}
