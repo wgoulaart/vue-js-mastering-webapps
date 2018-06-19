@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <h4 class="title is-3">SingIn</h4>
+    <h4 class="title is-3">SingUp </h4>
     <div class="form">
       <input
         type="text"
@@ -14,12 +14,9 @@
         class="input"
         v-model="password"
       />
-      <button class="button is-primary" @click="signIn">Sing In</button>
-      <router-link to="/signup">Not a user? Sing up</router-link>
+      <button class="button is-primary" @click="signUp">Sing Up</button>
+      <router-link to="/signin">Already a user? Sing in</router-link>
     </div>
-
-    <br>
-
     <p class="subtitle is-4"> {{ error.message}} </p>
   </div>
 </template>
@@ -38,10 +35,10 @@ export default {
     }
   },
   methods: {
-    signIn() {
+    signUp() {
       firebaseApp
         .auth()
-        .signInWithEmailAndPassword(this.email, this.password)
+        .createUserWithEmailAndPassword(this.email, this.password)
         .catch(error => {
           this.error = error
         })
@@ -49,3 +46,4 @@ export default {
   }
 }
 </script>
+
